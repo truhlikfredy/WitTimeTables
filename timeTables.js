@@ -11,7 +11,7 @@
 $(document).ready(function() {
 	var school='SS';					//School of science
 	var department='548715F70874B2B1561DDC98FE61E5C0';	//Computing, maths & physics department
-	var course='85EA4CF769354ECAD9F18363EC561527';		//Applied Computing Y2
+        var course='85EA4CF769354ECAD9F18363EC561528';		//Applied Computing Y3
 	var group='kcomp_b2-X';					//Students group
 	var week='20';						//Week 20
 
