@@ -15,7 +15,7 @@ $(document).ready(function() {
 	var group='kcomp_b3-W';					//Students group
 	var week='3';						//Week 20
 
-	if ($("#CboPOS").val()=="%" && $("#CboPOS").val()=="%" ) {
+	if ($("#CboPOS").val()=="%" ||  $("#CboPOS").val()=="E202D2DBD75D2CBF9E167CD46A2B0B68" ) ) {
 		$("#cboSchool").val(school);
 		$("#CboDep").val(department);
 		$("#CboPOS").val(course);
