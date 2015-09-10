@@ -16,7 +16,7 @@ $(document).ready(function() {
 	var week='3';						//Week 20
 
 	if ($("#CboPOS").val()=="%" && $("#CboPOS").val()=="%" ) {
-		$("#CboSchool").val(school);
+		$("#cboSchool").val(school);
 		$("#CboDep").val(department);
 		$("#CboPOS").val(course);
 		$("#CboStudParentGrp").val(group);
