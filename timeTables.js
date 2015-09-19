@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name WIT timetable automatic selection
 // @namespace http://antonkrug.eu
-// @version 0.5
+// @version 0.6
 // @description It selects your desired course
 // @match http://studentssp.wit.ie/Timetables/StudentGroupTT.aspx
 // @copyright 2014-2015 Anton Krug
@@ -15,14 +15,23 @@ $(document).ready(function() {
   var department='548715F70874B2B1561DDC98FE61E5C0';  //Computing, maths & physics department
   var course='85EA4CF769354ECAD9F18363EC561528';      //Applied Computing Y3
   var group='kcomp_b3-W';                             //Students group
-  var week='4';                                       //Week 4
+  var weekOffset='35';                                //For week 38 - 35 will display college week 3
+    
+  getThisWeekNumber = function(){
+    var d = new Date();
+    d.setHours(0,0,0);
+    d.setDate(d.getDate()+4-(d.getDay()||7));
+    return Math.ceil((((d-new Date(d.getFullYear(),0,1))/8.64e7)+1)/7);
+  };
+    
+  //alert(getThisWeekNumber()-weekOffset);
 
   if ($("#CboPOS").val()=="%" ||  $("#CboPOS").val()=="E202D2DBD75D2CBF9E167CD46A2B0B68" ) {
     $("#cboSchool").val(school);
     $("#CboDep").val(department);
     $("#CboPOS").val(course);
     $("#CboStudParentGrp").val(group);
-    $("#CboWeeks").val(week);
+    $("#CboWeeks").val(getThisWeekNumber()-weekOffset);
     $("#BtnRetrieve").click();
   } else {
     //Re-select some missing selections just for visuals.
