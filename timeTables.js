@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name WIT timetable automatic selection
 // @namespace http://antonkrug.eu
-// @version 0.6
+// @version 0.65
 // @description It selects your desired course
 // @match http://studentssp.wit.ie/Timetables/StudentGroupTT.aspx
 // @copyright 2014-2015 Anton Krug
@@ -21,7 +21,12 @@ $(document).ready(function() {
     var d = new Date();
     d.setHours(0,0,0);
     d.setDate(d.getDate()+4-(d.getDay()||7));
-    return Math.ceil((((d-new Date(d.getFullYear(),0,1))/8.64e7)+1)/7);
+    var ret = Math.ceil((((d-new Date(d.getFullYear(),0,1))/8.64e7)+1)/7);
+
+    //if sunday or saturday skip to next week.
+    var now=new Date()
+    if (now.getDay()==0 || now.getDay()==6) ret++;
+    return ret;
   };
     
   //alert(getThisWeekNumber()-weekOffset);
@@ -38,8 +43,8 @@ $(document).ready(function() {
     //And if somebody wants select something else (different week) so he will not be confused
     $("#CboStudParentGrp").val(group);
     //alter presentation of the time tables
-    $('#divTT table').first().remove();			//remove logo
-    $('#divTT *').each(function() {				//alter fonts
+    $('#divTT table').first().remove();         //remove logo
+    $('#divTT *').each(function() {             //alter fonts
       xsize= parseInt($(this).css('font-size')) + 1;    
       $(this).css('font-size', '9px');
     });
