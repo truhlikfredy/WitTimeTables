@@ -15,7 +15,7 @@ $(document).ready(function() {
   var department='548715F70874B2B1561DDC98FE61E5C0';  //Computing, maths & physics department
   var course='85EA4CF769354ECAD9F18363EC561529';      //Applied Computing Y4
   var group='kcomp_b4-W';                             //Students group
-  var weekOffset='3';                                 //For week 38 - 35 will display college week 3
+  var weekOffset='37';                                 //For week 38 - 35 will display college week 3
     
   getThisWeekNumber = function(){
     var d = new Date();
