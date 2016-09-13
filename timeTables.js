@@ -13,9 +13,9 @@
 $(document).ready(function() {
   var school='SS';                                    //School of science
   var department='548715F70874B2B1561DDC98FE61E5C0';  //Computing, maths & physics department
-  var course='85EA4CF769354ECAD9F18363EC561528';      //Applied Computing Y3
-  var group='kcomp_b3-W';                             //Students group
-  var weekOffset='35';                                //For week 38 - 35 will display college week 3
+  var course='85EA4CF769354ECAD9F18363EC561529';      //Applied Computing Y4
+  var group='kcomp_b4-W';                             //Students group
+  var weekOffset='3';                                 //For week 38 - 35 will display college week 3
     
   getThisWeekNumber = function(){
     var d = new Date();
@@ -24,8 +24,8 @@ $(document).ready(function() {
     var ret = Math.ceil((((d-new Date(d.getFullYear(),0,1))/8.64e7)+1)/7);
 
     //if sunday or saturday skip to next week.
-    var now=new Date()
-    if (now.getDay()==0 || now.getDay()==6) ret++;
+    var now=new Date();
+    if (now.getDay()===0 || now.getDay()==6) ret++;
     return ret;
   };
     
