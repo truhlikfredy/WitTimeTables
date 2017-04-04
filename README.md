@@ -8,3 +8,6 @@ http://studentssp.wit.ie/Timetables/StudentGroupTT.aspx
 Requires http://tampermonkey.net/ and compatible browser like Chrome.
 
 As defualt it's setup to select course I'm studying but of course you can change it to yours.
+
+![screenshot](screnShot.png)
+
